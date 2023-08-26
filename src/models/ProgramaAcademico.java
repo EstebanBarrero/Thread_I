@@ -5,10 +5,10 @@ import java.util.List;
 
 public class ProgramaAcademico {
 
-    String nombre_programa;
-    String codigo_SNIES;
-    List<Asignatura> asignaturas_programa; // Nueva lista para asignaturas de programa
-    List<Estudiante> estudiantes_matriculados_programa; // Nueva lista para estudiantes matriculados
+    public String nombre_programa;
+    public String codigo_SNIES;
+    public List<Asignatura> asignaturas_programa; // Nueva lista para asignaturas de programa
+    public List<Estudiante> estudiantes_matriculados_programa; // Nueva lista para estudiantes matriculados
 
     public ProgramaAcademico(String nombre_programa, String codigo_SNIES) {
         this.nombre_programa = nombre_programa;

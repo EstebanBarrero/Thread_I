@@ -1,10 +1,10 @@
 package models;
 
 public class Estudiante {
-    String id_estudiante;
-    String nombresApellidos;
-    String codigoEstudiante;
-    String correoElectronico;
+    public String id_estudiante;
+    public String nombresApellidos;
+    public String codigoEstudiante;
+    public String correoElectronico;
 
     public Estudiante(String id_estudiante, String nombresApellidos, String codigoEstudiante, String correoElectronico) {
         this.id_estudiante = id_estudiante;

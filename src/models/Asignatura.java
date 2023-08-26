@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Asignatura {
-    String nombre_asignatura;
-    String codigo_asignatura;
-    String creditos_asignatura;
-    List<Estudiante> lista_estudiantes_asignatura; // Nueva lista para estudiantes matriculados
+    public String nombre_asignatura;
+    public String codigo_asignatura;
+    public String creditos_asignatura;
+    public List<Estudiante> lista_estudiantes_asignatura; // Nueva lista para estudiantes matriculados
 
     public Asignatura(String nombre_asignatura, String codigo_asignatura, String creditos_asignatura) {
         this.nombre_asignatura = nombre_asignatura;

@@ -1,3 +1,7 @@
+import models.Asignatura;
+import models.Estudiante;
+import models.ProgramaAcademico;
+
 import java.io.BufferedReader;    // Importa la clase BufferedReader, que se utiliza para leer texto de un flujo de entrada
 import java.io.BufferedWriter;    // Importa la clase BufferedWriter, que se utiliza para escribir texto en un flujo de salida
 import java.io.FileReader;        // Importa la clase FileReader, que se utiliza para leer caracteres de un archivo de texto
