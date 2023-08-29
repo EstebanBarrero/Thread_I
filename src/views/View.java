@@ -2,15 +2,9 @@ package views;
 
 public class View {
 
-    public static final String MAIN_MENU = "=== MENÚ - LISTA ESTUDIANTES PROGRAMACIÓN III ===\n1. Ver estudiantes registrados"
-            + "\n2. Registrar un nuevo estudiante\n3. Modificar registro de estudiante\n4. Eliminar registro de estudiante"
-            + "5. Crear programa académico\n6. Modificar programa academico\n7. Eliminar programa académico"
-            + "8. Ver programas académicos registrados\n9. Crear asignatura\n10. Modificar asignatura\n11. Eliminar asignatura"
-            + "12. Ver asignaturas registradas\n13. Matricular estudiantes en programa\n14. Ver matricula de estudiantes en programa"
-            + "\n15. Eliminar estudiantes matricualados en programa\n16. Matricular estudiantes en asignatura"
-            + "\n17. Ver matricula de estudiantes en asignatura\n18. Eliminar estudiantes matricualados en asignatura\n0. Salir";
+    public static final String MAIN_MENU = "=== MENÚ - LISTA ESTUDIANTES PROGRAMACIÓN III ===\n1. ESTUDIANTES\n2. PROGRAMA ACADEMICO\n3. ASIGNATURA\n4. MATRICULA ESTUDIANTE PROGRAMA\n5. MATRICULA ESTUDIANTE ASIGNATURA\n0. Salir";
     public static final String LOAD_EXIT = "Guardando datos antes de salir...";
-    public static final String BYE = "¡Hasta luego!";
+    public static final String BYE = "¡Gracias por visitarnos!";
 
     public void showMenu() {// mostrar opciones menú
         System.out.println(MAIN_MENU);
@@ -21,10 +15,10 @@ public class View {
     }
     public void showMenuProgram(){
         System.out.println( "=== MENÚ - PROGRAMA ACADEMICO ===\n1. Crear programa académico\n2. Modificar programa academico\n3. Eliminar programa académico"
-                + "4. Ver programas académicos registrados\n0. Salir");
+                + "\n4. Ver programas académicos registrados\n0. Salir");
     }
     public void showMenuSubject(){
-        System.out.println("=== MENÚ - ASIGNATURA ===\n1. Crear asignatura\n2. Modificar asignatura\n3. Eliminar asignatura\n"
+        System.out.println("=== MENÚ - ASIGNATURA ===\n1. Crear asignatura\n2. Modificar asignatura\n3. Eliminar asignatura"
                 + "\n4. Ver asignaturas registradas\n0. Salir");
     }
 
@@ -43,5 +37,8 @@ public class View {
 
     public void showBye(){
         System.out.println(BYE);
+    }
+    public void showInvalidateOption(){
+        System.out.println("Opción no válida. Intente nuevamente.");
     }
 }

@@ -33,57 +33,89 @@ public class Presenter {
             view.showLoadToExit();
         }));
 
-        int opcion;
+        int opcionMainMenu, opcionSubMenu;
 
         do {
             view.showMenu();
-            opcion = leerOpcion();
+            opcionMainMenu = leerOpcion();
 
-            switch (opcion) {
-                case 1 ->
-                        verEstudiantesRegistrados();
-                case 2 ->
-                        registrarEstudiante();
-                case 3 ->
-                        modificarEstudiante();
-                case 4 ->
-                        eliminarEstudiante();
-                case 5 ->
-                        crearProgramaAcademico();
-                case 6 ->
-                        modificarProgramaAcademico();
-                case 7 ->
-                        eliminarProgramaAcademico();
-                case 8 ->
-                        verProgramasAcademicosRegistrados();
-                case 9 ->
-                        crearAsignatura();
-                case 10 ->
-                        modificarAsignatura();
-                case 11 ->
-                        eliminarAsignatura();
-                case 12 ->
-                        verAsignaturasRegistradas();
-                case 13 ->
-                        matricularEstudiante_programa();
-                case 14 ->
-                        verEstudiantesMatriculados_programa();
-                case 15 ->
-                        eliminar_Matricula_Estudiante_programa();
-                case 16 ->
-                        matricularEstudiante_asigantura();
-                case 17 ->
-                        verEstudiantesMatriculadosEnAsignatura();
-                case 18 ->
-                        eliminarEstudianteDeAsignatura();
+
+            switch (opcionMainMenu) {
+                case 1 -> {
+                    do{
+                        view.showMenuStudent();
+                        opcionSubMenu = leerOpcion();
+                        switch(opcionSubMenu) {
+                            case 1 -> verEstudiantesRegistrados();
+                            case 2 -> registrarEstudiante();
+                            case 3 -> modificarEstudiante();
+                            case 4 -> eliminarEstudiante();
+                            case 0 -> view.showBye();
+                            default -> view.showInvalidateOption();
+                        }
+                    }while (opcionSubMenu != 0);
+                }
+                case 2 -> {
+                    do {
+                        view.showMenuProgram();
+                        opcionSubMenu = leerOpcion();
+                        switch (opcionSubMenu) {
+                            case 1 -> crearProgramaAcademico();
+                            case 2 -> modificarProgramaAcademico();
+                            case 3 -> eliminarProgramaAcademico();
+                            case 4 -> verProgramasAcademicosRegistrados();
+                            case 0 -> view.showBye();
+                            default -> view.showInvalidateOption();
+                        }
+                    }while(opcionSubMenu != 0);
+                }
+                case 3 -> {
+                    do{
+                        view.showMenuSubject();
+                        opcionSubMenu = leerOpcion();
+                        switch (opcionSubMenu) {
+                            case 1 -> crearAsignatura();
+                            case 2 -> modificarAsignatura();
+                            case 3 -> eliminarAsignatura();
+                            case 4 -> verAsignaturasRegistradas();
+                            case 0 -> view.showBye();
+                            default -> view.showInvalidateOption();
+                        }
+                    }while(opcionSubMenu != 0);
+                }
+                case 4 -> {
+                    do{
+                        view.showMenuRegisterStudentProgram();
+                        opcionSubMenu = leerOpcion();
+                        switch (opcionSubMenu) {
+                            case 1 -> matricularEstudiante_programa();
+                            case 2 -> verEstudiantesMatriculados_programa();
+                            case 3 -> eliminar_Matricula_Estudiante_programa();
+                            case 0 -> view.showBye();
+                            default -> view.showInvalidateOption();
+                        }
+                    }while(opcionSubMenu != 0);
+                }
+                case 5 ->{
+                    do{
+                        view.showMenuRegisterStudentSubject();
+                        opcionSubMenu = leerOpcion();
+                        switch (opcionSubMenu) {
+                            case 1 -> matricularEstudiante_asigantura();
+                            case 2 -> verEstudiantesMatriculadosEnAsignatura();
+                            case 3 -> eliminarEstudianteDeAsignatura();
+                        }
+                    }while(opcionSubMenu != 0);
+                }
+                
                 case 0 ->
                         view.showBye();
                 default ->
-                        System.out.println("Opción no válida. Intente nuevamente.");
+                        view.showInvalidateOption();
                 // Guardar los datos antes de salir
 
             }
-        } while (opcion != 0);
+        } while (opcionMainMenu != 0);
 
         // Guardar los datos antes de salir
         guardarEstudiantesEnArchivo();
