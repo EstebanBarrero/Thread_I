@@ -36,7 +36,7 @@ public class Presenter {
         int opcion;
 
         do {
-            view.mostrarMenu();
+            view.showMenu();
             opcion = leerOpcion();
 
             switch (opcion) {
@@ -76,7 +76,6 @@ public class Presenter {
                         verEstudiantesMatriculadosEnAsignatura();
                 case 18 ->
                         eliminarEstudianteDeAsignatura();
-
                 case 0 ->
                         view.showBye();
                 default ->
